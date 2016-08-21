@@ -9,6 +9,7 @@
   <url>http://maven.apache.org</url>
   <properties>
     <spring.version>4.3.2.RELEASE</spring.version>
+    <aspect.version>1.8.9</aspect.version>
   </properties>
 
   <dependencies>
@@ -138,13 +139,6 @@
       <artifactId>javax.servlet-api</artifactId>
       <version>3.1.0</version>
     </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context-support</artifactId>
-      <version>3.0.5.RELEASE</version>
-    </dependency>
-
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
     <dependency>
       <groupId>mysql</groupId>
@@ -189,7 +183,17 @@
       <version>4.3.2.RELEASE</version>
     </dependency>
 
-
+    <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>${aspect.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>${aspect.version}</version>
+    </dependency>
 
   </dependencies>
   <build>

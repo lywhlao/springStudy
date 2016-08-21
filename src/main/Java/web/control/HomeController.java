@@ -18,9 +18,9 @@ public class HomeController {
 	@RequestMapping(value = {"/","/home"},method = RequestMethod.GET)
 	public String home(Model model) {
 		UserEntity userEntity=new UserEntity();
-		userEntity.setPassword("aaa");
-		userEntity.setUserName(Math.random()+"");
-		userEntity.setEmail("ccc");
+//		userEntity.setPassword("aaa");
+//		userEntity.setUserName(Math.random()+"");
+//		userEntity.setEmail("ccc");
 		userDao.insertUser(userEntity);
 		System.out.print("---------");
 		return "home";
