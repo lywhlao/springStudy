@@ -1,4 +1,4 @@
-package YQFund;
+package YQFund.bean;
 
 //# 中奖信息表
 //        DROP TABLE IF EXISTS `tb_yq_winner`;
@@ -14,7 +14,7 @@ package YQFund;
 /**
  * Created by Administrator on 2016-8-21.
  */
-public class PrizeEntity {
+public class WinnerEntity {
     private int id;
     private String uid;
     private boolean winnerType;

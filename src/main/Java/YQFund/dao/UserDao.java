@@ -28,7 +28,7 @@ import java.util.List;
 
 public interface UserDao {
 
-    //1.插入用户，再加入一些别的属性
+    //1.插入用户（再加入一些别的属性，比如设备号，ip地址，uuid？）
     @Insert("insert into tb_yq_user(uid) values (#{uid})")
     @Options(useGeneratedKeys = true,keyProperty = "id")
     public int insertUser(String uid);
@@ -64,6 +64,13 @@ public interface UserDao {
 
 
 
+    //8.获取个人基金收益情况（如果有同时买了A,B基金怎么处理？）
+        //TODO
+
+    //9.获取电影票中奖用户（条件需要再理一理）
+
+
+    //10.获取手机中奖用户(条件需要再理一理)
 
 
 

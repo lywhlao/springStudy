@@ -1,4 +1,4 @@
-package YQFund;
+package YQFund.bean;
 
 /**
  * "返回值"

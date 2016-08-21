@@ -1,4 +1,4 @@
-package YQFund;
+package YQFund.bean;
 
 
 /**

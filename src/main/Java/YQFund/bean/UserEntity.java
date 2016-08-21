@@ -1,4 +1,4 @@
-package YQFund;
+package YQFund.bean;
 
 
 //`id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',

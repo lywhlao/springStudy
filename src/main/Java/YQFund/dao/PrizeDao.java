@@ -1,51 +1,54 @@
 package YQFund.dao;
 
-//# 中奖信息表
-//        DROP TABLE IF EXISTS `tb_yq_winner`;
-//        CREATE TABLE `tb_yq_winner` (
-//        `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-//        `uid` varchar(128) NOT NULL COMMENT '用户邮箱',
-//        `winnerType` TINYINT(1) NOT NULL  COMMENT '中奖类别：0-电影券，1-电影券+手机',
-//        `mobileView` varchar(128) NOT NULL DEFAULT '' COMMENT '绑定的手机号码邮箱',
-//        `insertTime` bigint(20) NOT NULL DEFAULT '0' COMMENT '插入时间',
-//        PRIMARY KEY (`id`),
-//        UNIQUE KEY `IDX_YQ_WINNER_UID` (`uid`)
-//        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='中奖信息表';/*总数据1万条*/
-
 import bean.PrizeEntity;
 import bean.UserEntity;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+//
+//# 奖品表
+//        DROP TABLE IF EXISTS `tb_yq_prize`;
+//        CREATE TABLE `tb_yq_prize` (
+//        `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+//        `status` TINYINT(1) NOT NULL DEFAULT '0' COMMENT '0未发放，1已发放',
+//        `prizeType` TINYINT(1) NOT NULL  COMMENT '0电影券，1手机',
+//        `validSinceTS` bigint(20) NOT NULL DEFAULT '0' COMMENT '生效时间',
+//        `insertTime` bigint(20) NOT NULL DEFAULT '0' COMMENT '插入时间',
+//        PRIMARY KEY (`id`)
+//        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='奖品表';/*总数据2条*/
 /**
  * Created by Administrator on 2016-8-21.
  */
 public interface PrizeDao {
 
-    //1.插入中奖用户
-    @Insert("insert into tb_yq_winner(uid,winnerType,mobileView,insertTime)" +
-            " values(#{winnerType},#{mobileView},#{insertTime})")
+    //1.插入中手机信息
+    @Insert("insert into tb_yq_prize(status,prizeType,validSinceTS,insertTime)" +
+            " values (#{status},#{prizeType},#{validSinceTS},#{insertTime})")
     @Options(useGeneratedKeys = true,keyProperty = "id")
     public int insertPrize(PrizeEntity prizeEntity);
 
-    //2.获取总共中奖数
-    @Select("select * from tb_yq_winner")
-    public int getWinnerNum();
+    //2.获取中手机信息条数
+    @Select("select * from tb_yq_prize where prizeType=#{prizeType}")
+    public int getPrizeNumByType(String prizeType);
 
-    //3.获取得手机的用户
-    @Select("select * from tb_yq_winner where winnerType = 1")
-    public List<PrizeEntity> getWinnerByPhone();
+    //3.更新中奖状态
+    @Update("update tb_yq_prize (status,validSinceTS) where id=#{id}")
+    public int updatePrizeEffectStatus(PrizeEntity prizeEntity);
 
-    //4.更新用户中奖
-    @Update("update tb_yq_winner set winnerType=#{winnerType}," +
-            "mobileView=#{mobileView} insertTime=#{insertTime}" +
-            "where uid=#{uid}")
-    public int updateWinner(PrizeEntity prizeEntity);
+    //4.获取未中奖实体
+    @Select("select * from tb_yq_prize where status=0")
+    public List<PrizeEntity> getUnEffectPrize();
 
-    //5.删除中奖用户
-    @Delete("delete from tb_yq_winner where uid=#{uid}")
-    public int deleteWinner(String uid);
+    //5.获取中奖实体
+    @Select("select * from tb_yq_prize where status=1")
+    public List<PrizeEntity> getEffectPrize();
 
+    //6.获取未中奖个数
+    @Select("select count(*) from tb_yq_prize where status=0")
+    public int getUnEffectPrizeNum();
 
+    //7获取中奖个数
+    @Select("select count(*) from tb_yq_prize where status=1")
+    public int getEffectPrizeNum();
 }
