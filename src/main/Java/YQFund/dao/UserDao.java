@@ -71,7 +71,9 @@ public interface UserDao {
 
 
     //10.获取手机中奖用户(条件需要再理一理)
-
+    @Select("select * from tb_yq_user where ")
+    public List<UserEntity> getUsersForPayment();
+    //// TODO: 2016-8-21  
 
 
 }
