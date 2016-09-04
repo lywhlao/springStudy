@@ -19,6 +19,7 @@ import java.util.Properties;
 @Configuration
 @MapperScan("persistence")
 @Import(CacheConfigure.class)
+@ComponentScan({"web.control","service"})
 public class RootConfigure {
 
 	// JDBC数据源
