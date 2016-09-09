@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+	<appender name="DEFAULT_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/springStudy/default.log-%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%m]%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="STAT_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>/home/logs/statistics/springStudy.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/statistics/springStudy.log.%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%d %t %-5level %c{0}.%M:%L -%m%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+	</appender>
+
+	<appender name="INTERACTIVE_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/springStudy/interactive.log-%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%m]%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="THIRDPARTY_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/springStudy/thirdparty.log-%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%m]%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="TASK_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/springStudy/task.log-%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%m]%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="CACHE_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/springStudy/cache.log-%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%m]%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="SEC_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/springStudy/security.log-%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%m]%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="PAYMENT_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/springStudy/payment.log-%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%m]%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="CONFIG_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/springStudy/config.log-%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%m]%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="MAIL_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/springStudy/mail.log-%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%m]%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="LUCKY_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/springStudy/lucky.log-%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%m]%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="MONEY_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/springStudy/money.log-%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%m]%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="REDIS_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/logs/springStudy/redis.log-%d{yyyy-MM-dd}
+			</fileNamePattern>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%m]%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="DAO_LOG"
+        class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/home/logs/springStudy/dao.log-%d{yyyy-MM-dd}
+            </fileNamePattern>
+        </rollingPolicy>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%m]%n</pattern>
+        </encoder>
+    </appender>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoder 默认配置为PatternLayoutEncoder -->
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="DEFAULT_LOGGER">
+		<level value="INFO" />
+		<appender-ref ref="DEFAULT_LOG" />
+	</logger>
+
+	<logger name="STAT_LOGGER">
+		<level value="INFO" />
+		<appender-ref ref="STAT_LOG" />
+	</logger>
+
+	<logger name="INTERACTIVE_LOGGER">
+		<level value="INFO" />
+		<appender-ref ref="INTERACTIVE_LOG" />
+	</logger>
+
+	<logger name="THIRDPARTY_LOGGER">
+		<level value="INFO" />
+		<appender-ref ref="THIRDPARTY_LOG" />
+	</logger>
+
+	<logger name="TASK_LOGGER">
+		<level value="INFO" />
+		<appender-ref ref="TASK_LOG" />
+	</logger>
+
+	<logger name="CACHE_LOGGER">
+		<level value="INFO" />
+		<appender-ref ref="CACHE_LOG" />
+	</logger>
+
+	<logger name="SEC_LOGGER">
+		<level value="INFO" />
+		<appender-ref ref="SEC_LOG" />
+	</logger>
+
+	<logger name="PAYMENT_LOGGER">
+		<level value="INFO" />
+		<appender-ref ref="PAYMENT_LOG" />
+	</logger>
+
+	<logger name="CONFIG_LOGGER">
+		<level value="INFO" />
+		<appender-ref ref="CONFIG_LOG" />
+	</logger>
+
+	<logger name="MAIL_LOGGER">
+		<level value="INFO" />
+		<appender-ref ref="MAIL_LOG" />
+	</logger>
+
+	<logger name="LUCKY_LOGGER">
+		<level value="INFO" />
+		<appender-ref ref="LUCKY_LOG" />
+	</logger>
+
+	<logger name="MONEY_LOGGER">
+		<level value="INFO" />
+		<appender-ref ref="MONEY_LOG" />
+	</logger>
+
+	<logger name="REDIS_LOGGER">
+		<level value="INFO" />
+		<appender-ref ref="REDIS_LOG" />
+	</logger>
+
+	<logger name="com.netease.mail">
+		<level value="INFO" />
+		<appender-ref ref="DEFAULT_LOG" />
+	</logger>
+	
+	<logger name="DAO_LOGGER">
+        <level value="INFO" />
+        <appender-ref ref="DAO_LOG" />
+    </logger>
+
+	<root level="INFO">
+		<!--<appender-ref ref="STDOUT" />-->
+	</root>
+</configuration>

@@ -1,23 +1,15 @@
 package test;
 
 import bean.Apple;
-import bean.Banana;
 import bean.Fruit;
-import configure.WebConfig;
 import impl.BasicGenerator;
 import inter.Generator;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.mail.javamail.JavaMailSender;
-import persistence.UserDao;
-import bean.UserEntity;
 import configure.RootConfigure;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;

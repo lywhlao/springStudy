@@ -15,16 +15,15 @@ public interface UserDao {
 
 
     @Insert("insert into users(username,password,email) values(#{userName},#{password},#{email})")
-    @Options(useGeneratedKeys = true,keyProperty = "userId")
     public int insertUser(UserEntity userEntity);
 
 
     @Select("select * from users")
-    public List<UserEntity> findAllUser();
+    public List<UserEntity> getAllUser();
 
 
-    @Select("select * from users where userId=#{id}")
-    public UserEntity findUserById(int id);
+    @Select("select * from users where userName=#{name}")
+    public UserEntity findUserByName(String name);
 
 
 }
