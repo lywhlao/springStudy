@@ -26,7 +26,7 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = {"/login"},method = RequestMethod.GET)
-	public String login(@RequestParam("name")String name,@RequestParam("password")String password) {
+	public String login(@RequestParam("name")String name, @RequestParam("password")String password) {
 		System.out.println("login"+name+","+password);
 		return "home";
 	}
