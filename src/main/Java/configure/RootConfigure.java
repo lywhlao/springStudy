@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -16,7 +17,8 @@ import javax.sql.DataSource;
 @Configuration
 @MapperScan("persistence")
 @Import({CacheConfigure.class,ThreadPoolConfigure.class,SecurityConfigure.class})
-@PropertySource("classpath:db.properties")
+@PropertySources({@PropertySource("classpath:db.properties"),
+		@PropertySource("classpath:role.properties")})
 @ComponentScan("service")
 public class RootConfigure {
 
@@ -52,4 +54,11 @@ public class RootConfigure {
 			sessionFactory.setTypeAliasesPackage("bean");
 			return sessionFactory.getObject();
 	}
+
+	//配置propertyHolder
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer(){
+		return new PropertySourcesPlaceholderConfigurer();
+	}
+
 }

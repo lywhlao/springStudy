@@ -56,4 +56,9 @@ public class MyTest extends AbstractJUnit4SpringContextTests {
         person.setName("hello");
         System.out.print(person.getName());
     }
+
+    @Test
+    public void testA(){
+
+    }
 }

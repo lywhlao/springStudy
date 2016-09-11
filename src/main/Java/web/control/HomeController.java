@@ -4,6 +4,7 @@ import bean.UserEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,10 @@ import persistence.UserDao;
 public class HomeController {
 
 	private static final Logger THIRDPARTY_LOG = LoggerFactory.getLogger("THIRDPARTY_LOGGER");
+
+
+	@Value("${role}")
+	String role;
 
 	@Autowired
 	UserDao userDao;
@@ -40,8 +45,8 @@ public class HomeController {
 	@RequestMapping(value = {"/getTest"},method = RequestMethod.GET)
 	@ResponseBody
 	public String getTest() {
-		THIRDPARTY_LOG.info("test>>>>>>>>>>>>");
-		return "home";
+		THIRDPARTY_LOG.info("test>>>>>>>>>>>>"+role);
+		return "home"+role;
 	}
 
 
