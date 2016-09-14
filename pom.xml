@@ -231,6 +231,22 @@
       <version>${aspect.version}</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.springframework.session/spring-session -->
+    <dependency>
+      <groupId>org.springframework.session</groupId>
+      <artifactId>spring-session</artifactId>
+      <version>1.2.2.RELEASE</version>
+    </dependency>
+
+    <!--JAVA 工具包-->
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.4</version>
+    </dependency>
+
+
   </dependencies>
   <build>
     <finalName>test</finalName>

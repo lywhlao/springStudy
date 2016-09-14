@@ -1,6 +1,7 @@
 package configure;
 
 import configure.sercurity.SecurityConfigure;
+import configure.session.HttpSessionConfigure;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -16,7 +17,7 @@ import javax.sql.DataSource;
 //配置非web方面的bean
 @Configuration
 @MapperScan("persistence")
-@Import({CacheConfigure.class,ThreadPoolConfigure.class,SecurityConfigure.class})
+@Import({CacheConfigure.class,ThreadPoolConfigure.class,SecurityConfigure.class, HttpSessionConfigure.class})
 @PropertySources({@PropertySource("classpath:db.properties"),
 		@PropertySource("classpath:role.properties")})
 @ComponentScan("service")
